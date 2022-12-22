@@ -1,6 +1,7 @@
 # reviewPagestaticCRUDoperations
 
 Made an Introductory page to understatic static functionality of NodeJS , ExpressJS , EJS
+
 Landing Page Contains List of reviews
 
 Functionalities are:
