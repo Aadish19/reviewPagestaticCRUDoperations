@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title %>  </title>
+
+    <link rel="stylesheet" href="css/blogStyle.css">
+</head>
+<body>
+    
+    <h1 align="center" class="blogs">Blogs
+        <br>
+        <a href="/AddMore">
+            <button>Add a new Blog </button>
+        </a>
+    </h1>
+    <ul>
+        <% for(let i of blog){ %>
+            <li>
+                <div class="blog-container">
+                    <div class="left">
+                        <div class="heading">
+                            <h1><%= i.username %></h1>
+                        </div>
+                        <div class="functionality">
+                            
+                            <a href="/<%=i.id%>/show">
+                                <button class="show"> Show </button>
+                            </a>    
+                            
+                            <a href="/<%=i.id%>/update">
+                                <button class="update"> Update </button>
+                            </a>     
+                                <span style="display: inline;"><form method="POST" action="/<%= i.id %>?_method=DELETE" style="display: inline;">
+                                    <button class="delete" type="submit">Delete</button>
+                                </form></span>
+                        </div>
+                    </div>
+            
+                    <div class="right reviews">
+                            <%= i.review %>
+                    </div>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+    
+
+</body>
+</html>
